@@ -12,11 +12,17 @@ async def init_db():
     global db_pool
     db_pool = await asyncpg.create_pool(
         dsn=os.getenv("DATABASE_URL"),  # faqat URL orqali ulanish
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASS"),
+        database=os.getenv("DB_NAME"),
+        host=os.getenv("DB_HOST"),
+        port=int(os.getenv("DB_PORT")),
         ssl="require",
         statement_cache_size=0
     )
 
     async with db_pool.acquire() as conn:
+        pass
         # === Foydalanuvchilar ===
         await conn.execute("""
             CREATE TABLE IF NOT EXISTS users (
