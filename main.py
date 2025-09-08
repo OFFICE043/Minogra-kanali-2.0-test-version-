@@ -35,10 +35,10 @@ load_dotenv()
 keep_alive()
 
 API_TOKEN = os.getenv("API_TOKEN")
-CHANNELS = ["-1002734105148", "-1002794679420", "-1002362274987"]
-LINKS = ["https://t.me/+mdTqsXHmquk1Yzgy", "https://t.me/+Zezs3tLa6nIyYWZi", "https://t.me/+lNoJK7cVEMgzNjhi"]
-MAIN_CHANNELS = ["-1002362274987"]
-MAIN_LINKS = ["https://t.me/+lNoJK7cVEMgzNjhi"]
+CHANNELS = []
+LINKS = []
+MAIN_CHANNELS = []
+MAIN_LINKS = []
 BOT_USERNAME = os.getenv("BOT_USERNAME")
 
 bot = Bot(token=API_TOKEN)
